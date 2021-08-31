@@ -46,9 +46,9 @@ def count_clicks(bitlink, headers):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-    description='Программа выводит сокращенные ссылки и количество кликов по ним.'
+    description="Программа выводит сокращенные ссылки и количество кликов по ним."
     )
-    parser.add_argument('link', help='Ссылка или битлинк')
+    parser.add_argument("link", help="Ссылка или битлинк")
     user_url = parser.parse_args().link
     token = os.getenv("BITLY_TOKEN")
     authorization = {
