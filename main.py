@@ -54,10 +54,11 @@ if __name__ == "__main__":
     authorization = {
         "Authorization": "Bearer {}".format(token)
     }
+    netloc_with_path = get_netloc_with_path(user_url)
 
-    if is_bitlink(authorization, get_netloc_with_path(user_url)):
+    if is_bitlink(authorization, netloc_with_path):
         try:
-            print(count_clicks(get_netloc_with_path(user_url), authorization))
+            print(count_clicks(netloc_with_path, authorization))
         except:
             print("Ошибка при подсчете кликов")
     else:
