@@ -1,5 +1,4 @@
 from dotenv import load_dotenv
-load_dotenv()
 from urllib.parse import urlparse
 import argparse
 import requests
@@ -45,6 +44,7 @@ def count_clicks(bitlink, headers):
 
 
 if __name__ == "__main__":
+    load_dotenv()
     parser = argparse.ArgumentParser(
         description="Программа выводит сокращенные ссылки и количество кликов по ним."
     )
