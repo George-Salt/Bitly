@@ -34,19 +34,19 @@ def shorten_link(headers, user_url):
 
 
 def count_clicks(bitlink, headers):
-        sum_clicks_url = "https://api-ssl.bitly.com/v4/bitlinks/{bitlink}/clicks/summary"
-        response = requests.get(
-            sum_clicks_url.format(bitlink=bitlink),
-            headers=headers,
-        )
-        response.raise_for_status()
-        answer = response.json()
-        return answer["total_clicks"]
+    sum_clicks_url = "https://api-ssl.bitly.com/v4/bitlinks/{bitlink}/clicks/summary"
+    response = requests.get(
+        sum_clicks_url.format(bitlink=bitlink),
+        headers=headers,
+    )
+    response.raise_for_status()
+    answer = response.json()
+    return answer["total_clicks"]
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-    description="Программа выводит сокращенные ссылки и количество кликов по ним."
+        description="Программа выводит сокращенные ссылки и количество кликов по ним."
     )
     parser.add_argument("link", help="Ссылка или битлинк")
     user_url = parser.parse_args().link
